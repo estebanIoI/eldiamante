@@ -235,12 +235,12 @@
             border: 3px solid rgba(255, 107, 53, 0.3);
         }
 
-        .product-showcase::before {
-            content: '💎';
-            font-size: 15rem;
-            position: absolute;
+        .product-showcase img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 27px;
             animation: float 3s ease-in-out infinite;
-            filter: drop-shadow(0 10px 30px rgba(255, 107, 53, 0.6));
         }
 
         @keyframes float {
@@ -373,6 +373,61 @@
         .benefit-card p {
             color: rgba(248, 250, 252, 0.8);
             line-height: 1.6;
+        }
+
+        /* Results Showcase Section */
+        .results-showcase {
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, #1a1f3a 0%, var(--dark) 100%);
+        }
+
+        .results-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .results-media {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 3px solid rgba(255, 107, 53, 0.4);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .results-media:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 50px rgba(255, 107, 53, 0.5);
+        }
+
+        .results-media img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .results-media-label {
+            background: var(--gradient);
+            text-align: center;
+            padding: 1rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .results-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
         }
 
         /* How to Use Section */
@@ -839,8 +894,8 @@
                 margin: 0 1rem;
             }
 
-            .product-showcase::before {
-                font-size: 8rem;
+            .product-showcase img {
+                border-radius: 17px;
             }
 
             .product-badge {
@@ -1038,8 +1093,8 @@
                 height: 250px;
             }
 
-            .product-showcase::before {
-                font-size: 6rem;
+            .product-showcase img {
+                border-radius: 15px;
             }
 
             .section-title {
@@ -1137,6 +1192,7 @@
             </div>
             <div class="hero-image">
                 <div class="product-showcase">
+                    <img src="page/eldiamante.jpg" alt="EL DIAMANTE - Limpiador Multiuso Profesional">
                     <div class="product-badge">¡ENVÍO GRATIS!</div>
                 </div>
             </div>
@@ -1178,6 +1234,24 @@
                     <div class="benefit-icon">🌟</div>
                     <h3>Multiuso Total</h3>
                     <p>Electrodomésticos, zapatos, muebles, computadores, armarios y más. ¡Un solo producto para absolutamente todo!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Showcase -->
+    <section class="results-showcase">
+        <div class="results-container">
+            <h2 class="section-title">Resultados Reales</h2>
+            <p class="section-subtitle">Mira con tus propios ojos el poder de EL DIAMANTE</p>
+            <div class="results-grid">
+                <div class="results-media fade-in">
+                    <img src="page/gifantes y despues.gif" alt="EL DIAMANTE - Antes y Después">
+                    <div class="results-media-label">Antes y Después</div>
+                </div>
+                <div class="results-media fade-in">
+                    <img src="page/en accion.jpg" alt="EL DIAMANTE en Acción">
+                    <div class="results-media-label">El Diamante en Acción</div>
                 </div>
             </div>
         </div>
