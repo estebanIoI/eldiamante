@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#FF6B35">
+    <meta name="description" content="EL DIAMANTE - Limpiador multiuso profesional. Lo negro más negro, lo blanco más blanco. Envío gratis a toda Colombia.">
+    <title>EL DIAMANTE - Limpieza Profesional que Brilla</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Mejoras para touch en móviles */
+        button, a, .benefit-card, .testimonial-card {
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        :root {
+            --primary: #FF6B35;
+            --secondary: #004E89;
+            --accent: #FFD23F;
+            --success: #06D6A0;
+            --dark: #1A1F2E;
+            --light: #F8FAFC;
+            --gradient: linear-gradient(135deg, #FF6B35 0%, #F7931E 50%, #FFD23F 100%);
+            --gradient-blue: linear-gradient(135deg, #004E89 0%, #1A659E 100%);
+            --gradient-success: linear-gradient(135deg, #06D6A0 0%, #00B388 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+            scroll-padding-top: 80px;
+        }
+
+        /* Prevenir zoom en inputs en iOS */
+        @media screen and (max-width: 768px) {
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            select,
+            textarea {
+                font-size: 16px !important;
+            }
+        }
+
+        /* Header Sticky */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 31, 46, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+        }
+
+        .cta-button {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.7);
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5); }
+            50% { box-shadow: 0 10px 50px rgba(255, 107, 53, 0.8), 0 0 0 10px rgba(255, 107, 53, 0.1); }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(255,107,53,0.15) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5rem;
+            line-height: 1;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideInLeft 1s ease;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            animation: slideInLeft 1s ease 0.2s backwards;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: rgba(248, 250, 252, 0.8);
+            animation: slideInLeft 1s ease 0.4s backwards;
+        }
+
+        .hero-image {
+            position: relative;
+            animation: slideInRight 1s ease 0.6s backwards;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .product-showcase {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, rgba(255,107,53,0.2) 0%, rgba(255,210,63,0.2) 100%);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.4);
+            border: 3px solid rgba(255, 107, 53, 0.3);
+        }
+
+        .product-showcase::before {
+            content: '💎';
+            font-size: 15rem;
+            position: absolute;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 10px 30px rgba(255, 107, 53, 0.6));
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gradient-success);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 20px rgba(6, 214, 160, 0.5);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, var(--dark) 0%, #1a1f3a 100%);
+        }
+
+        .benefits-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: rgba(248, 250, 252, 0.7);
+            margin-bottom: 4rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 107, 53, 0.3);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255,107,53,0.1) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease;
+            border-radius: 50%;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.4);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .benefit-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .benefit-card:hover::after {
+            width: 400px;
+            height: 400px;
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .benefit-card p {
+            color: rgba(248, 250, 252, 0.8);
+            line-height: 1.6;
+        }
+
+        /* How to Use Section */
+        .how-to-use {
+            padding: 6rem 2rem;
+            background: var(--dark);
+        }
+
+        .steps-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            align-items: start;
+        }
+
+        .step-number {
+            width: 100px;
+            height: 100px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);
+        }
+
+        .step-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .step-content p {
+            font-size: 1.1rem;
+            color: rgba(248, 250, 252, 0.8);
+            line-height: 1.8;
+        }
+
+        /* Price Section */
+        .price-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #1a1f3a 0%, var(--dark) 100%);
+        }
+
+        .price-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(26, 31, 46, 0.95) 100%);
+            border: 3px solid var(--primary);
+            border-radius: 30px;
+            padding: 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.4);
+        }
+
+        .price-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,107,53,0.15) 0%, transparent 70%);
+            animation: rotate 15s linear infinite;
+        }
+
+        .price-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient);
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.8);
+        }
+
+        .price-container > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .price-tag {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+        }
+
+        .price-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .price-features li {
+            font-size: 1.2rem;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: linear-gradient(90deg, rgba(255, 107, 53, 0.15) 0%, rgba(255, 210, 63, 0.1) 100%);
+            border-radius: 10px;
+            color: var(--light);
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .price-features li:hover {
+            transform: translateX(10px);
+            background: linear-gradient(90deg, rgba(255, 107, 53, 0.25) 0%, rgba(255, 210, 63, 0.15) 100%);
+        }
+
+        .price-features li::before {
+            content: '✓ ';
+            color: var(--success);
+            font-weight: bold;
+            margin-right: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .urgency-text {
+            color: var(--accent);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            animation: blink 1.5s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 2rem;
+            background: var(--dark);
+        }
+
+        .testimonials-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 2px solid rgba(255, 107, 53, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 6rem;
+            color: rgba(255, 107, 53, 0.1);
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-card:hover {
+            transform: scale(1.05);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+
+        .stars {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: rgba(248, 250, 252, 0.9);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* CTA Final */
+        .final-cta {
+            padding: 6rem 2rem;
+            background: var(--gradient);
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .final-cta p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .final-cta .cta-button {
+            font-size: 1.3rem;
+            padding: 1.5rem 4rem;
+            background: white;
+            color: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            background: #05070f;
+            padding: 2rem;
+            text-align: center;
+            color: rgba(248, 250, 252, 0.6);
+        }
+
+        /* Cart Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .modal.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a1f3a 0%, var(--dark) 100%);
+            border-radius: 30px;
+            padding: 3rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            border: 2px solid var(--primary);
+            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.5);
+            margin: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .modal {
+                padding: 1rem;
+                align-items: flex-start;
+                padding-top: 2rem;
+            }
+            
+            .modal-content {
+                margin: 0;
+                border-radius: 20px;
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: var(--primary);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 107, 53, 0.3);
+            border-radius: 10px;
+            color: var(--light);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        /* Estilos específicos para select en móviles */
+        .form-group select {
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF6B35' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.2em;
+            padding-right: 3rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2);
+        }
+
+        .order-summary {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(255, 210, 63, 0.1) 100%);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border: 2px solid rgba(255, 107, 53, 0.3);
+        }
+
+        .order-summary h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            color: rgba(248, 250, 252, 0.9);
+        }
+
+        .summary-total {
+            border-top: 2px solid var(--primary);
+            padding-top: 1rem;
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .submit-order {
+            width: 100%;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 1.2rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-order::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .submit-order:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .submit-order:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 0 1rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                padding-top: 100px;
+                min-height: auto;
+                padding-bottom: 3rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.8rem;
+                line-height: 1.1;
+            }
+
+            .hero-text .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .product-showcase {
+                height: 300px;
+                margin: 0 1rem;
+            }
+
+            .product-showcase::before {
+                font-size: 8rem;
+            }
+
+            .product-badge {
+                top: 10px;
+                right: 10px;
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .benefits,
+            .how-to-use,
+            .price-section,
+            .testimonials {
+                padding: 3rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .benefits-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .benefit-card {
+                padding: 1.5rem;
+            }
+
+            .benefit-icon {
+                font-size: 2.5rem;
+            }
+
+            .benefit-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .step {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .step-number {
+                margin: 0 auto;
+                width: 80px;
+                height: 80px;
+                font-size: 2.5rem;
+            }
+
+            .step-content h3 {
+                font-size: 1.5rem;
+            }
+
+            .step-content p {
+                font-size: 1rem;
+            }
+
+            .price-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .price-tag {
+                font-size: 3.5rem;
+            }
+
+            .price-features li {
+                font-size: 1rem;
+                padding: 0.8rem;
+            }
+
+            .final-cta {
+                padding: 3rem 1rem;
+            }
+
+            .final-cta h2 {
+                font-size: 2.5rem;
+            }
+
+            .final-cta p {
+                font-size: 1.2rem;
+            }
+
+            .final-cta .cta-button {
+                font-size: 1.1rem;
+                padding: 1.2rem 2.5rem;
+            }
+
+            .modal-content {
+                padding: 2rem 1.5rem;
+                width: 95%;
+            }
+
+            .close-modal {
+                top: 1rem;
+                right: 1rem;
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .form-group {
+                margin-bottom: 1rem;
+            }
+
+            .form-group label {
+                font-size: 0.95rem;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-size: 0.95rem;
+                padding: 0.9rem;
+            }
+
+            .order-summary {
+                padding: 1rem;
+            }
+
+            .summary-item {
+                font-size: 0.95rem;
+            }
+
+            .summary-total {
+                font-size: 1.3rem;
+            }
+
+            .submit-order {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+
+            .testimonial-card {
+                padding: 1.5rem;
+            }
+
+            .stars {
+                font-size: 1.2rem;
+            }
+
+            .testimonial-text {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Tablets y dispositivos medianos */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .hero-content {
+                gap: 3rem;
+            }
+
+            .hero-text h1 {
+                font-size: 4rem;
+            }
+
+            .benefits-grid,
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Dispositivos muy pequeños */
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .cta-button {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.85rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-text .subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-text p {
+                font-size: 0.9rem;
+            }
+
+            .product-showcase {
+                height: 250px;
+            }
+
+            .product-showcase::before {
+                font-size: 6rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .benefit-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .benefit-card p {
+                font-size: 0.9rem;
+            }
+
+            .price-tag {
+                font-size: 3rem;
+            }
+
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+
+            .final-cta p {
+                font-size: 1rem;
+            }
+
+            .final-cta .cta-button {
+                font-size: 1rem;
+                padding: 1rem 2rem;
+            }
+
+            .modal-content {
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        /* Mejoras para scroll suave en móvil */
+        @media (max-width: 768px) {
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                -webkit-overflow-scrolling: touch;
+            }
+
+            /* Optimización de taps en móvil */
+            .cta-button,
+            .submit-order,
+            .benefit-card,
+            .testimonial-card {
+                -webkit-tap-highlight-color: rgba(255, 107, 53, 0.3);
+            }
+
+            /* Mejor espaciado en móvil */
+            section {
+                scroll-margin-top: 80px;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">💎 EL DIAMANTE</div>
+            <button class="cta-button" onclick="openCart()">Hacer Pedido</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>EL DIAMANTE</h1>
+                <div class="subtitle">¡Restaura, Limpia y Renueva Todo!</div>
+                <p>El limpiador que devuelve la vida a tus electrodomésticos, zapatos, muebles, computadores, carros, motos y armarios. Lo negro queda más negro, lo blanco más blanco. ¡Descubre el poder del DIAMANTE!</p>
+                <button class="cta-button" onclick="openCart()">¡Quiero el Mío Ahora!</button>
+            </div>
+            <div class="hero-image">
+                <div class="product-showcase">
+                    <div class="product-badge">¡ENVÍO GRATIS!</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="benefits-container">
+            <h2 class="section-title">¿Por Qué Elegir EL DIAMANTE?</h2>
+            <p class="section-subtitle">La diferencia que puedes ver y sentir</p>
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">✨</div>
+                    <h3>Brillo Profesional</h3>
+                    <p>Deja todas tus superficies con un acabado impecable y brillante como nunca antes.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">⚫</div>
+                    <h3>Lo Negro Más Negro</h3>
+                    <p>¡Restaura el color intenso de tus electrodomésticos, zapatos, computadores, carros, motos y armarios! Lo negro recupera su profundidad original.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">⚪</div>
+                    <h3>Lo Blanco Más Blanco</h3>
+                    <p>Devuelve el blanco puro a todas tus superficies. Elimina el amarillamiento y manchas, dejando todo impecable.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">🔧</div>
+                    <h3>Elimina Lo Perjudicado</h3>
+                    <p>Dale vida a lo que parecía perdido. Quita manchas, opacidad y desgaste de muebles, plásticos y superficies desgastadas.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">🚗</div>
+                    <h3>Para Todo Vehículo</h3>
+                    <p>Perfecto para carros y motos. Limpia tableros, asientos, llantas, cromados y toda la carrocería con resultados profesionales.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">🌟</div>
+                    <h3>Multiuso Total</h3>
+                    <p>Electrodomésticos, zapatos, muebles, computadores, armarios y más. ¡Un solo producto para absolutamente todo!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Use -->
+    <section class="how-to-use">
+        <div class="steps-container">
+            <h2 class="section-title">Modo de Uso</h2>
+            <p class="section-subtitle">3 pasos simples para resultados perfectos</p>
+            
+            <div class="step fade-in">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Aplica con Espuma</h3>
+                    <p>Rocía EL DIAMANTE sobre la superficie a limpiar, asegurándote de cubrir toda el área uniformemente. La espuma activa se adhiere y comienza a trabajar inmediatamente.</p>
+                </div>
+            </div>
+
+            <div class="step fade-in">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Distribuye en Toda la Superficie</h3>
+                    <p>Con un paño suave o toalla limpia, distribuye el producto en movimientos circulares cubriendo completamente la superficie. Deja que la fórmula actúe por unos segundos.</p>
+                </div>
+            </div>
+
+            <div class="step fade-in">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Seca y Admira el Resultado</h3>
+                    <p>Seca con una toalla o tela limpia hasta obtener el brillo perfecto. ¡Listo! Disfruta de superficies impecables y radiantes. Úsalo y nota la diferencia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section class="benefits" style="background: var(--dark);">
+        <div class="benefits-container">
+            <h2 class="section-title">¿Dónde Usar EL DIAMANTE?</h2>
+            <p class="section-subtitle">Un producto revolucionario para cada rincón de tu vida</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">🚗</div>
+                    <h3>Carros y Motos</h3>
+                    <p>Tablero, asientos, llantas, cromados, plásticos. Deja tu vehículo como recién salido del concesionario. ¡Lo negro recupera su intensidad!</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">💻</div>
+                    <h3>Electrodomésticos y Electrónicos</h3>
+                    <p>Refrigeradores, lavadoras, microondas, computadores, TV. Elimina manchas y opacidad. ¡Lo blanco vuelve a ser blanco puro!</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">👟</div>
+                    <h3>Calzado</h3>
+                    <p>Zapatos de cuero, deportivos, botas. Restaura el color y el brillo. Los zapatos negros lucen como nuevos.</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">🪑</div>
+                    <h3>Muebles</h3>
+                    <p>Sillas, mesas, gabinetes, closets. Quita lo perjudicado y devuelve la vida a tus muebles favoritos.</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">🚪</div>
+                    <h3>Armarios y Puertas</h3>
+                    <p>Renueva armarios, puertas, manijas. Perfecto para superficies de madera, metal y plástico.</p>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">✨</div>
+                    <h3>Y Mucho Más</h3>
+                    <p>Cocina, baño, vidrios, pisos. No hay superficie que EL DIAMANTE no pueda limpiar y renovar. ¡Úsalo en todo!</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <div style="background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(255, 210, 63, 0.15) 100%); padding: clamp(1.5rem, 4vw, 2rem); border-radius: 20px; border: 2px solid var(--primary); max-width: 800px; margin: 0 auto; box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);">
+                    <h3 style="color: var(--accent); font-size: clamp(1.5rem, 4vw, 2rem); margin-bottom: 1rem;">🔥 El Secreto del DIAMANTE 🔥</h3>
+                    <p style="font-size: clamp(1rem, 3vw, 1.3rem); line-height: 1.8; color: var(--light);">
+                        <strong style="color: var(--primary);">Lo negro se queda más negro</strong> recuperando su color intenso y profundo.<br>
+                        <strong style="color: var(--primary);">Lo blanco se queda más blanco</strong> eliminando el amarillamiento y manchas.<br>
+                        <strong style="color: var(--success);">¡Dale vida a lo perjudicado!</strong> Restaura lo que creías perdido.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="benefits-container">
+            <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
+            <p class="section-subtitle">Miles de hogares ya confían en EL DIAMANTE</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"¡Wow! Usé EL DIAMANTE en mi carro negro y quedó espectacular. El tablero y las llantas lucen como si acabara de comprarlo. ¡Increíble!"</p>
+                    <p class="testimonial-author">- Carlos Ramírez, Medellín</p>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Mi nevera blanca estaba amarillenta y manchada. Con EL DIAMANTE quedó como nueva, brillante y perfectamente blanca. ¡Lo recomiendo!"</p>
+                    <p class="testimonial-author">- María González, Bogotá</p>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Restauré mis zapatos negros de cuero que ya parecían viejos. Ahora lucen impecables. También lo uso en mi moto. ¡Excelente producto!"</p>
+                    <p class="testimonial-author">- Ana Martínez, Cali</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Section -->
+    <section class="price-section">
+        <div class="price-container fade-in">
+            <div style="position: absolute; top: -15px; right: 30px; background: linear-gradient(135deg, #FF0000 0%, #FF6B35 100%); color: white; padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: 700; font-size: clamp(0.75rem, 2vw, 0.9rem); box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4); z-index: 10; animation: shake 2s ease-in-out infinite;">
+                🔥 OFERTA LIMITADA
+            </div>
+            <h2 class="section-title">Oferta Especial</h2>
+            <div class="price-tag">$60.000</div>
+            <p style="color: var(--light); font-size: 1.2rem; margin-bottom: 2rem;">Precio especial por tiempo limitado</p>
+            
+            <ul class="price-features">
+                <li>Envío GRATIS a toda Colombia</li>
+                <li>Restaura lo negro y lo blanco</li>
+                <li>Para carros, motos, electrodomésticos</li>
+                <li>Renueva zapatos, muebles y armarios</li>
+                <li>Elimina lo perjudicado y da vida nueva</li>
+                <li>Entrega en 2-5 días hábiles</li>
+            </ul>
+
+            <button class="cta-button" onclick="openCart()">¡Ordenar Ahora!</button>
+            <p class="urgency-text">¡No te quedes sin el tuyo!</p>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <h2>¿Listo Para Ver La Diferencia?</h2>
+        <p>Únete a miles de colombianos que ya disfrutan de la limpieza profesional en casa</p>
+        <button class="cta-button" onclick="openCart()">¡Comprar EL DIAMANTE Ahora!</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 EL DIAMANTE. Todos los derechos reservados.</p>
+        <p>Limpieza profesional para tu hogar</p>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeCart()">&times;</button>
+            <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 2rem;">Finalizar Pedido</h2>
+            
+            <div class="order-summary">
+                <h3>Resumen de tu Orden</h3>
+                <div class="summary-item">
+                    <span>EL DIAMANTE - Limpiador Multiuso</span>
+                    <span>$60.000</span>
+                </div>
+                <div class="summary-item">
+                    <span>Envío a toda Colombia</span>
+                    <span style="color: var(--accent);">GRATIS</span>
+                </div>
+                <div class="summary-item summary-total">
+                    <span>Total:</span>
+                    <span>$60.000 COP</span>
+                </div>
+            </div>
+
+            <form id="orderForm" onsubmit="submitOrder(event)">
+                <div class="form-group">
+                    <label>Nombre Completo *</label>
+                    <input type="text" name="name" required placeholder="Ej: Juan Pérez">
+                </div>
+
+                <div class="form-group">
+                    <label>Teléfono / WhatsApp *</label>
+                    <input type="tel" name="phone" required placeholder="Ej: 300 123 4567">
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="tu@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Departamento *</label>
+                    <select name="department" id="departmentSelect" required onchange="updateCities()">
+                        <option value="">Selecciona tu departamento</option>
+                        <option value="Amazonas">Amazonas</option>
+                        <option value="Antioquia">Antioquia</option>
+                        <option value="Arauca">Arauca</option>
+                        <option value="Atlántico">Atlántico</option>
+                        <option value="Bolívar">Bolívar</option>
+                        <option value="Boyacá">Boyacá</option>
+                        <option value="Caldas">Caldas</option>
+                        <option value="Caquetá">Caquetá</option>
+                        <option value="Casanare">Casanare</option>
+                        <option value="Cauca">Cauca</option>
+                        <option value="Cesar">Cesar</option>
+                        <option value="Chocó">Chocó</option>
+                        <option value="Córdoba">Córdoba</option>
+                        <option value="Cundinamarca">Cundinamarca</option>
+                        <option value="Guainía">Guainía</option>
+                        <option value="Guaviare">Guaviare</option>
+                        <option value="Huila">Huila</option>
+                        <option value="La Guajira">La Guajira</option>
+                        <option value="Magdalena">Magdalena</option>
+                        <option value="Meta">Meta</option>
+                        <option value="Nariño">Nariño</option>
+                        <option value="Norte de Santander">Norte de Santander</option>
+                        <option value="Putumayo">Putumayo</option>
+                        <option value="Quindío">Quindío</option>
+                        <option value="Risaralda">Risaralda</option>
+                        <option value="San Andrés y Providencia">San Andrés y Providencia</option>
+                        <option value="Santander">Santander</option>
+                        <option value="Sucre">Sucre</option>
+                        <option value="Tolima">Tolima</option>
+                        <option value="Valle del Cauca">Valle del Cauca</option>
+                        <option value="Vaupés">Vaupés</option>
+                        <option value="Vichada">Vichada</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Municipio/Ciudad *</label>
+                    <select name="city" id="citySelect" required disabled>
+                        <option value="">Primero selecciona un departamento</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Dirección Completa *</label>
+                    <input type="text" name="address" required placeholder="Calle, número, apto/casa">
+                </div>
+
+                <div class="form-group">
+                    <label>Notas adicionales (opcional)</label>
+                    <textarea name="notes" rows="3" placeholder="Información adicional para la entrega..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-order">Confirmar Pedido - $60.000</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Base de datos de municipios por departamento
+        const municipiosPorDepartamento = {
+            "Amazonas": ["Leticia", "Puerto Nariño"],
+            "Antioquia": ["Medellín", "Bello", "Itagüí", "Envigado", "Apartadó", "Turbo", "Rionegro", "Caucasia", "Sabaneta", "La Ceja", "Carmen de Viboral", "Puerto Berrío", "Necoclí", "San Pedro de Urabá", "Yarumal"],
+            "Arauca": ["Arauca", "Arauquita", "Saravena", "Tame", "Fortul", "Puerto Rondón", "Cravo Norte"],
+            "Atlántico": ["Barranquilla", "Soledad", "Malambo", "Sabanalarga", "Puerto Colombia", "Galapa", "Baranoa", "Palmar de Varela", "Juan de Acosta", "Santo Tomás"],
+            "Bolívar": ["Cartagena", "Magangué", "Turbaco", "Arjona", "El Carmen de Bolívar", "Mompós", "Turbana", "San Juan Nepomuceno", "María La Baja", "San Pablo"],
+            "Boyacá": ["Tunja", "Duitama", "Sogamoso", "Chiquinquirá", "Paipa", "Villa de Leyva", "Puerto Boyacá", "Moniquirá", "Garagoa", "Samacá", "Nobsa", "Tibasosa", "Ventaquemada"],
+            "Caldas": ["Manizales", "La Dorada", "Chinchiná", "Villamaría", "Riosucio", "Anserma", "Palestina", "Neira", "Supía", "Aguadas"],
+            "Caquetá": ["Florencia", "San Vicente del Caguán", "Puerto Rico", "El Doncello", "Albania", "Belén de los Andaquíes", "Cartagena del Chairá", "Curillo", "El Paujil", "Morelia"],
+            "Casanare": ["Yopal", "Aguazul", "Villanueva", "Tauramena", "Paz de Ariporo", "Monterrey", "Trinidad", "Maní", "Hato Corozal", "Sabanalarga"],
+            "Cauca": ["Popayán", "Santander de Quilichao", "Puerto Tejada", "Patía", "Piendamó", "Corinto", "Miranda", "Guachené", "Caloto", "Villa Rica"],
+            "Cesar": ["Valledupar", "Aguachica", "Bosconia", "Curumaní", "Codazzi", "La Paz", "Chimichagua", "Pelaya", "Chiriguaná", "San Diego"],
+            "Chocó": ["Quibdó", "Istmina", "Condoto", "Tadó", "Acandí", "Bahía Solano", "Riosucio", "Nuquí", "Bajo Baudó", "El Carmen de Atrato"],
+            "Córdoba": ["Montería", "Cereté", "Lorica", "Sahagún", "Tierralta", "Montelíbano", "Planeta Rica", "Ciénaga de Oro", "Ayapel", "San Antero"],
+            "Cundinamarca": ["Bogotá D.C.", "Soacha", "Fusagasugá", "Facatativá", "Chía", "Zipaquirá", "Girardot", "Cajicá", "Madrid", "Mosquera", "Funza", "Cota", "La Calera", "Tocancipá", "Sopó", "Tenjo", "Tabio", "Gachancipá", "Ubaté", "Villeta", "Anapoima", "La Mesa"],
+            "Guainía": ["Inírida", "Barranco Minas", "Mapiripana", "San Felipe", "Puerto Colombia", "La Guadalupe", "Cacahual", "Pana Pana", "Morichal"],
+            "Guaviare": ["San José del Guaviare", "Calamar", "El Retorno", "Miraflores"],
+            "Huila": ["Neiva", "Pitalito", "Garzón", "La Plata", "Campoalegre", "Gigante", "Hobo", "Aipe", "Rivera", "Algeciras", "Isnos", "San Agustín", "Timaná"],
+            "La Guajira": ["Riohacha", "Maicao", "Uribia", "Manaure", "Fonseca", "Villanueva", "San Juan del Cesar", "Dibulla", "Albania", "Barrancas"],
+            "Magdalena": ["Santa Marta", "Ciénaga", "Fundación", "Plato", "El Banco", "Zona Bananera", "Aracataca", "Pivijay", "Sabanas de San Ángel", "San Zenón"],
+            "Meta": ["Villavicencio", "Acacías", "Granada", "Puerto López", "San Martín", "Restrepo", "Cumaral", "Puerto Gaitán", "La Macarena", "Mesetas"],
+            "Nariño": ["Pasto", "Tumaco", "Ipiales", "Túquerres", "Barbacoas", "La Unión", "Samaniego", "Cumbal", "Ricaurte", "Guaitarilla"],
+            "Norte de Santander": ["Cúcuta", "Ocaña", "Villa del Rosario", "Los Patios", "Pamplona", "Chinácota", "El Zulia", "Tibú", "Villa Caro", "Sardinata"],
+            "Putumayo": ["Mocoa", "Puerto Asís", "Orito", "Valle del Guamuez", "Puerto Guzmán", "Villagarzón", "Puerto Caicedo", "Sibundoy", "San Francisco", "Colón"],
+            "Quindío": ["Armenia", "Calarcá", "La Tebaida", "Montenegro", "Quimbaya", "Circasia", "Filandia", "Salento", "Génova", "Pijao"],
+            "Risaralda": ["Pereira", "Dosquebradas", "La Virginia", "Santa Rosa de Cabal", "Marsella", "Belén de Umbría", "Apía", "Santuario", "Quinchía", "Pueblo Rico"],
+            "San Andrés y Providencia": ["San Andrés", "Providencia"],
+            "Santander": ["Bucaramanga", "Floridablanca", "Girón", "Piedecuesta", "Barrancabermeja", "San Gil", "Socorro", "Málaga", "Barbosa", "Vélez", "Puerto Wilches", "Sabana de Torres"],
+            "Sucre": ["Sincelejo", "Corozal", "Sampués", "San Marcos", "Tolú", "Sincé", "Majagual", "San Onofre", "Ovejas", "Coveñas"],
+            "Tolima": ["Ibagué", "Espinal", "Melgar", "Líbano", "Honda", "Chaparral", "Mariquita", "Purificación", "Guamo", "Saldaña", "Flandes", "Armero Guayabal"],
+            "Valle del Cauca": ["Cali", "Palmira", "Buenaventura", "Tuluá", "Cartago", "Buga", "Jamundí", "Yumbo", "Candelaria", "Florida", "Pradera", "Sevilla", "Andalucía", "Zarzal"],
+            "Vaupés": ["Mitú", "Carurú", "Pacoa", "Taraira", "Papunaua", "Yavaraté"],
+            "Vichada": ["Puerto Carreño", "La Primavera", "Santa Rosalía", "Cumaribo"]
+        };
+
+        // Función para actualizar los municipios según el departamento
+        function updateCities() {
+            const departmentSelect = document.getElementById('departmentSelect');
+            const citySelect = document.getElementById('citySelect');
+            const selectedDepartment = departmentSelect.value;
+
+            // Limpiar opciones anteriores
+            citySelect.innerHTML = '<option value="">Selecciona tu municipio</option>';
+
+            if (selectedDepartment && municipiosPorDepartamento[selectedDepartment]) {
+                // Habilitar el selector de municipios
+                citySelect.disabled = false;
+
+                // Agregar los municipios del departamento seleccionado
+                municipiosPorDepartamento[selectedDepartment].forEach(municipio => {
+                    const option = document.createElement('option');
+                    option.value = municipio;
+                    option.textContent = municipio;
+                    citySelect.appendChild(option);
+                });
+            } else {
+                // Deshabilitar si no hay departamento seleccionado
+                citySelect.disabled = true;
+            }
+        }
+
+        // Open/Close Cart Modal
+        function openCart() {
+            document.getElementById('cartModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCart() {
+            document.getElementById('cartModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Submit Order
+        function submitOrder(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const orderData = {};
+            formData.forEach((value, key) => {
+                orderData[key] = value;
+            });
+
+            // Crear mensaje para WhatsApp
+            const whatsappMessage = `
+🛒 *NUEVO PEDIDO - EL DIAMANTE* 💎
+
+👤 *DATOS DEL CLIENTE:*
+Nombre: ${orderData.name}
+Teléfono: ${orderData.phone}
+Email: ${orderData.email || 'No proporcionado'}
+
+📍 *DIRECCIÓN DE ENVÍO:*
+Ciudad: ${orderData.city}
+Departamento: ${orderData.department}
+Dirección: ${orderData.address}
+
+📝 *NOTAS:*
+${orderData.notes || 'Sin notas adicionales'}
+
+💰 *TOTAL: $60.000 COP*
+🚚 Envío GRATIS a toda Colombia
+
+---
+Pedido generado desde la página web
+Fecha: ${new Date().toLocaleString('es-CO')}
+            `.trim();
+
+            // Codificar el mensaje para URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // Número de WhatsApp (formato internacional sin + ni espacios)
+            const whatsappNumber = '573206362946';
+            
+            // Crear URL de WhatsApp
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            // Mostrar mensaje de éxito
+            const orderNumber = Math.floor(Math.random() * 10000);
+            
+            // Crear modal de éxito
+            showSuccessMessage(orderNumber);
+            
+            // Abrir WhatsApp después de un breve delay
+            setTimeout(() => {
+                window.open(whatsappURL, '_blank');
+            }, 1500);
+            
+            // Cerrar el modal del formulario
+            setTimeout(() => {
+                closeCart();
+                event.target.reset();
+            }, 3000);
+        }
+
+        // Función para mostrar mensaje de éxito
+        function showSuccessMessage(orderNumber) {
+            // Crear overlay
+            const successOverlay = document.createElement('div');
+            successOverlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.95);
+                z-index: 3000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                animation: fadeIn 0.3s ease;
+            `;
+
+            // Crear contenido del mensaje
+            successOverlay.innerHTML = `
+                <div style="
+                    background: linear-gradient(135deg, #1a1f3a 0%, #1A1F2E 100%);
+                    border-radius: 30px;
+                    padding: 2rem;
+                    text-align: center;
+                    max-width: 500px;
+                    width: 90%;
+                    border: 3px solid #FF6B35;
+                    box-shadow: 0 20px 60px rgba(255, 107, 53, 0.6);
+                    animation: scaleIn 0.5s ease;
+                ">
+                    <div style="
+                        width: 80px;
+                        height: 80px;
+                        background: linear-gradient(135deg, #06D6A0 0%, #00B388 100%);
+                        border-radius: 50%;
+                        margin: 0 auto 1.5rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 2.5rem;
+                        animation: bounce 0.6s ease;
+                        box-shadow: 0 10px 30px rgba(6, 214, 160, 0.5);
+                    ">
+                        ✓
+                    </div>
+                    
+                    <h2 style="
+                        font-family: 'Bebas Neue', sans-serif;
+                        font-size: clamp(1.5rem, 5vw, 2.5rem);
+                        background: linear-gradient(135deg, #FF6B35 0%, #F7931E 50%, #FFD23F 100%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        margin-bottom: 1rem;
+                    ">
+                        ¡PEDIDO REALIZADO CON ÉXITO!
+                    </h2>
+                    
+                    <p style="
+                        color: #FFD23F;
+                        font-size: clamp(1rem, 3vw, 1.3rem);
+                        font-weight: 600;
+                        margin-bottom: 1rem;
+                    ">
+                        Número de Pedido: #${orderNumber}
+                    </p>
+                    
+                    <p style="
+                        color: rgba(248, 250, 252, 0.9);
+                        font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+                        line-height: 1.6;
+                        margin-bottom: 1rem;
+                    ">
+                        Gracias por tu compra. En un momento serás redirigido a WhatsApp para confirmar tu pedido.
+                    </p>
+                    
+                    <div style="
+                        background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(6, 214, 160, 0.1) 100%);
+                        padding: 1rem;
+                        border-radius: 15px;
+                        border: 2px solid rgba(255, 107, 53, 0.3);
+                    ">
+                        <p style="
+                            color: #06D6A0;
+                            font-size: clamp(0.85rem, 2vw, 1rem);
+                            margin: 0;
+                            line-height: 1.6;
+                        ">
+                            📱 Te contactaremos pronto para confirmar tu envío<br>
+                            🚚 Envío GRATIS a toda Colombia<br>
+                            💎 ¡Pronto tendrás EL DIAMANTE en tus manos!
+                        </p>
+                    </div>
+                </div>
+            `;
+
+            // Agregar estilos de animación
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeIn {
+                    from { opacity: 0; }
+                    to { opacity: 1; }
+                }
+                @keyframes scaleIn {
+                    from { 
+                        opacity: 0;
+                        transform: scale(0.8);
+                    }
+                    to { 
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+                }
+                @keyframes bounce {
+                    0%, 100% { transform: scale(1); }
+                    50% { transform: scale(1.1); }
+                }
+            `;
+            document.head.appendChild(style);
+
+            document.body.appendChild(successOverlay);
+
+            // Remover el mensaje después de 3 segundos
+            setTimeout(() => {
+                successOverlay.style.animation = 'fadeOut 0.3s ease';
+                setTimeout(() => {
+                    document.body.removeChild(successOverlay);
+                }, 300);
+            }, 2800);
+        }
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Close modal on outside click
+        document.getElementById('cartModal').addEventListener('click', (e) => {
+            if (e.target.id === 'cartModal') {
+                closeCart();
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeCart();
+            }
+        });
+    </script>
+</body>
+</html>
